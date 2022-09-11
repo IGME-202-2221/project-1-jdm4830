@@ -4,8 +4,8 @@
 
 ### Student Info
 
--   Name: YOUR NAME
--   Section: ##
+-   Name: Jordan Mazza
+-   Section: 202
 
 ## Game Design
 
