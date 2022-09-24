@@ -22,15 +22,18 @@ _A brief explanation of your game. Inculde what is the objective for the player.
 ### Controls
 
 -   Movement
-    -   Up: 
-    -   Down: 
-    -   Left: 
-    -   Right: 
--   Fire: 
+    -   Up: W Key
+    -   Down: S Key
+    -   Left: D Key
+    -   Right: A Key
+-   Fire: Space Bar
 
 ## You Additions
 
-_List out what you added to your game to make it different for you_
+The way I will make my game unique is to have the enemies come from all sides of the screen. All 4 sides of the screen will have enemies attack, but the way to make
+it not TOO diffiuclt is that the side with the enemies attacking, there will be a red flashing line on that edge of the screen. Which then enemies will attack from
+there. Another thing I want to try is to make it so the player can only move left and right and once they hit the side of the screen, they will rotate to the side
+so that the ship moves around the inner perimeter of the screen.
 
 ## Sources
 
