@@ -48,8 +48,9 @@ public class Vehicle : MonoBehaviour
         //wraps vehicle around edges once it corsses boundary
         if (transform.position.x < leftEdge)
         {
-            transform.position = new Vector2(rightEdge, transform.position.y);
-            //transform.rotation = Quaternion.LookRotation(Vector3.left, direction);
+            transform.position = new Vector2(bottomEdge, transform.position.y);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.right);
+            
         }
         if(transform.position.x > rightEdge)
         {
