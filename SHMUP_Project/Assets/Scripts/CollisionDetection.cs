@@ -20,7 +20,7 @@ public class CollisionDetection : MonoBehaviour
     void Update()
     {
         //if currently colliding, turn me red
-        if(false)
+        if(GameObject.position.x )
         {
             mSpriteRenderer.color = Color.red;
         }
