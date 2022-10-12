@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
@@ -7,14 +8,17 @@ public class CollisionManager : MonoBehaviour
     //Store all of the collidable objects in my scene
     public List<CollisionDetection> collidableObjects = new List<CollisionDetection>();
 
-    //Keeps track of circle collision
-    public bool isUsingCircleCollision = false;
-
-    
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        foreach(GameObject collidable in GameObject.FindGameObjectsWithTag("Object"))
+        {
+            collidableObjects.Add(collidable.GetComponent<CollisionDetection>());
+        }
+        collidableObjects.Add(GameObject.FindGameObjectWithTag("Player").GetComponent<CollisionDetection>());
         
     }
 
@@ -28,44 +32,33 @@ public class CollisionManager : MonoBehaviour
         }
         
         //Check to see if any objects are colliding with one another, adn tell the objects what they're colliding with
-
         for(int i = 0; i < collidableObjects.Count; i++)
         {
             for(int y = i+1; y < collidableObjects.Count; y++)
             {
-                if(isUsingCircleCollision)
+                if(CircleCollision(collidableObjects[i], collidableObjects[y]))
                 {
-                    //do circle collision check
+                    collidableObjects[i].isCurrentlyColliding = true;
+                    collidableObjects[y].isCurrentlyColliding = true;
                 }
-                else
-                {
-                    if(AABBCollision(collidableObjects[i], collidableObjects[y]))
-                    {
-                        collidableObjects[i].isCurrentlyColliding = true;
-                        collidableObjects[y].isCurrentlyColliding = true;
-                        //do my collision resolution
-                    }
-                }
-                
             }
         }
     }
 
-    private bool AABBCollision(CollisionDetection objectA, CollisionDetection objectB)
+    private bool CircleCollision(CollisionDetection num1, CollisionDetection num2)
     {
-        //Use AABB collision detection to see if object a and object B are colliding
-
-        //return true if yes, return false if no
-        return false;
-    }
-
-    public void SwitchToCircleCollision()
-    {
-        isUsingCircleCollision = true;
-    }
-
-    public void SwitchToAABBCollision()
-    {
-        isUsingCircleCollision = false;
+        float r1 = num1.radius;
+        float r2 = num2.radius;
+        float distance = Mathf.Sqrt
+            ((Mathf.Pow(num1.transform.position.x - num2.transform.position.x, 2) + 
+            Mathf.Pow(num1.transform.position.y - num2.transform.position.y, 2)));
+            if(distance <= (r1+r2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
     }
 }

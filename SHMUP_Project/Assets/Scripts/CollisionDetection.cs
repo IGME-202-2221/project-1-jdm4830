@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CollisionDetection : MonoBehaviour
 {
     public bool isCurrentlyColliding = false;
-
-    SpriteRenderer mSpriteRenderer;
-    Color mNewColor;
+    public float radius = 1f;
+    public SpriteRenderer mSpriteRenderer;
+    public SpriteRenderer SpriteRenderer{ get { return SpriteRenderer; } }
+    public Color mNewColor;
 
     // Start is called before the first frame update
     void Start()
@@ -20,20 +22,18 @@ public class CollisionDetection : MonoBehaviour
     void Update()
     {
         //if currently colliding, turn me red
-        if(GameObject.position.x )
+        if(isCurrentlyColliding)
         {
             mSpriteRenderer.color = Color.red;
+        }
+        else
+        {
+            mSpriteRenderer.color = Color.white;
         }
     }
 
     public void ResetCollision()
     {
         isCurrentlyColliding = false;
-    }
-
-    public bool AABBCollision(CollisionDetection otherCollider)
-    {
-        //Check to see if this object and the other are colliding
-        return false;
     }
 }
