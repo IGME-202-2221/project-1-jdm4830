@@ -1,4 +1,4 @@
-# Project PROJECT_NAME
+# Project Edge Shooters
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
@@ -9,15 +9,15 @@
 
 ## Game Design
 
--   Camera Orientation: _How are the art assets viewed from? (ie. topdown or side)_
--   Camera Movement: _How does the camera move in your game? (if at all)_
--   Player Health: _How are you handling player health? (healthbar, lives, ?)_
--   End Condition: _How does a game/round/level end?_
--   Scoring: _How does the player earn points in your game?_
+-   Camera Orientation: The art assests are viewed from the topside.
+-   Camera Movement: The camera is a fixed position on the screen of the game.
+-   Player Health: The player has a healthbar. They can take 5 total hits.
+-   End Condition: Once all enemies are defeated the wave ends. After 3 waves the game is complete.
+-   Scoring: Killing the enemies, surviving each wave.
 
 ### Game Description
 
-_A brief explanation of your game. Inculde what is the objective for the player. Think about what would go on the back of a game box._
+The objective of the game is for the player to surviv e3 waves of enemies. Each wave is random amound of enemies from a range of numbers. And there are 3 enemy types. Each type of enemy moves at a different speed.
 
 ### Controls
 
@@ -26,7 +26,7 @@ _A brief explanation of your game. Inculde what is the objective for the player.
     -   Down: S Key
     -   Left: D Key
     -   Right: A Key
--   Fire: Space Bar
+-   Fire: Left Mouse Button
 
 ## You Additions
 
@@ -37,14 +37,18 @@ so that the ship moves around the inner perimeter of the screen.
 
 ## Sources
 
--   _List all project sources here –models, textures, sound clips, assets, etc._
+-   Game Asset Sprites from: redfoc.com
 -   _If an asset is from the Unity store, include a link to the page and the author’s name_
 
 ## Known Issues
 
-_List any errors, lack of error checking, or specific information that I need to know to run your program_
+The collision does not work properly. The player and enemies are highlited red and when they disappear an error occurs. Tried to make a timer for bullet firing, but could not figure it out. The score is not added when an enemy gets destroyed, and the health bar does not decrease when the player takes damage. The border for the player movement is only the bottom right diagonal of the game screen.
 
 ### Requirements not completed
 
-_If you did not complete a project requirement, notate that here_
+-Delay between player fired bullets (timer setup I had did not work).
+-Scoring system does not work.
+-Health bar does not properly work.
+-Enemies collide with other enemies.
+-My own twist was to have the player stick to the edge of the screen, which was only half way done.
 
