@@ -42,9 +42,13 @@ so that the ship moves around the inner perimeter of the screen.
 
 ## Known Issues
 
-The collision does not work properly. The player and enemies are highlited red but do not
+The collision does not work properly. The player and enemies are highlited red and when they disappear an error occurs. Tried to make a timer for bullet firing, but could not figure it out. The score is not added when an enemy gets destroyed, and the health bar does not decrease when the player takes damage. The border for the player movement is only the bottom right diagonal of the game screen.
 
 ### Requirements not completed
 
-_If you did not complete a project requirement, notate that here_
+-Delay between player fired bullets (timer setup I had did not work).
+-Scoring system does not work.
+-Health bar does not properly work.
+-Enemies collide with other enemies.
+-My own twist was to have the player stick to the edge of the screen, which was only half way done.
 
