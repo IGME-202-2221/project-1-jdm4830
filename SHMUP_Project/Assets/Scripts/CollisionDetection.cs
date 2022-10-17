@@ -27,7 +27,7 @@ public class CollisionDetection : MonoBehaviour
         if(isCurrentlyColliding)
         {
             mSpriteRenderer.color = Color.red;
-            
+            Destroy(mSpriteRenderer);
         }
         else
         {
