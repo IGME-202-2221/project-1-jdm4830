@@ -1,4 +1,4 @@
-# Project PROJECT_NAME
+# Project Edge Shooters
 
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)
 
