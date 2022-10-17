@@ -48,22 +48,58 @@ public class Vehicle : MonoBehaviour
         //wraps vehicle around edges once it corsses boundary
         if (transform.position.x < leftEdge)
         {
-            transform.position = new Vector2(bottomEdge, transform.position.y);
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.right);
+            transform.position = new Vector2(leftEdge, transform.position.y);
+            //transform.position = new Vector2(bottomEdge, transform.position.y);
+            //transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.right);
             
         }
         if(transform.position.x > rightEdge)
         {
-            transform.position = new Vector2(leftEdge, transform.position.y);
+            transform.position = new Vector2(rightEdge, transform.position.y);
         }
         if (transform.position.y > topEdge)
         {
-            transform.position = new Vector2(transform.position.x, bottomEdge);
+            transform.position = new Vector2(transform.position.x, topEdge);
         }
         if (transform.position.y < bottomEdge)
         {
-            transform.position = new Vector2(transform.position.x, topEdge);
+            transform.position = new Vector2(transform.position.x, bottomEdge);
         }
+
+        //bottom x axis movement
+        /*
+        if (transform.position.y == -4.35 && transform.position.x >= 7)
+        {
+            transform.position = new Vector2(7.3f, -3.1f);
+            
+        }
+        */
+        
+        if (transform.position.y >= -4.35 && transform.position.x < 7)
+        {
+            transform.position = new Vector2(transform.position.x, -4.35f);
+        }
+        
+
+        /*
+        if (transform.position.y < -3 && transform.position.x == 7.3)
+        {
+            transform.position = new Vector2(6.9f, -4.35f);
+        }
+        */
+        /*
+        //right side movement
+        if (transform.position.y >= -3 && transform.position.x == 7.3)
+        {
+            transform.position = new Vector2(7.3f, -3f);
+        }
+        
+        if (transform.position.y >= -3 && transform.position.x > 7.3)
+        {
+            transform.position = new Vector2(7.3f, transform.position.y);
+        }
+        */
+        
     }
 
     public void OnMove(InputAction.CallbackContext moveContext)
