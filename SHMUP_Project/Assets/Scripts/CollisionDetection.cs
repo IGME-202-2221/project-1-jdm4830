@@ -10,6 +10,8 @@ public class CollisionDetection : MonoBehaviour
     public SpriteRenderer mSpriteRenderer;
     public SpriteRenderer SpriteRenderer{ get { return SpriteRenderer; } }
     public Color mNewColor;
+    public CollisionManager collisionManager;
+    public Player playerHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class CollisionDetection : MonoBehaviour
         if(isCurrentlyColliding)
         {
             mSpriteRenderer.color = Color.red;
+            
         }
         else
         {

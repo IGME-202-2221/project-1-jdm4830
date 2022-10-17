@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
 
     private int finalScore = 0;
 
+    public CollisionDetection colliding;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +36,22 @@ public class Player : MonoBehaviour
 
         healthBar.value = health / maxHealth;
 
+        if(colliding.isCurrentlyColliding)
+        {
+            health -= 1;
+        }
+
         finalScore += score;
 
         if(health == 0)
         {
             SceneManager.LoadScene("GameOver");
         }
+
+    }
+
+    public void Score()
+    {
+        
     }
 }

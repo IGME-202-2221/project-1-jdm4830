@@ -10,6 +10,8 @@ public class CollisionManager : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    private SpawnManager spawnManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,14 @@ public class CollisionManager : MonoBehaviour
                     collidableObjects[i].isCurrentlyColliding = true;
                     collidableObjects[y].isCurrentlyColliding = true;
                 }
+                /*
+                if(CircleCollision(collidableObjects[i], collidableObjects[y]))
+                {
+                    Destroy(collidableObjects[i]);
+                    Destroy(collidableObjects[y]);
+                    spawnManager.Spawn();
+                }
+                */
             }
         }
     }

@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player
+    [SerializeField]
+    private Transform[] enemyPath;
+
+    [SerializeField]
+    private float moveSpeed = 0.3f;
+
+    [SerializeField]
+    private int enemyPathIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //transform.position = enemyPath[enemyPathIndex].transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
+        Move();
+    }
+
+    private void Move()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, 
+            enemyPath[enemyPathIndex].transform.position, 
+            moveSpeed * Time.deltaTime);
     }
 }
